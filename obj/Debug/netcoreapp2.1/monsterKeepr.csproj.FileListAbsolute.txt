@@ -1,0 +1,14 @@
+C:\Users\codyb\source\codeworks\monsterKeepr\bin\Debug\netcoreapp2.1\monsterKeepr.deps.json
+C:\Users\codyb\source\codeworks\monsterKeepr\bin\Debug\netcoreapp2.1\monsterKeepr.runtimeconfig.json
+C:\Users\codyb\source\codeworks\monsterKeepr\bin\Debug\netcoreapp2.1\monsterKeepr.runtimeconfig.dev.json
+C:\Users\codyb\source\codeworks\monsterKeepr\bin\Debug\netcoreapp2.1\monsterKeepr.dll
+C:\Users\codyb\source\codeworks\monsterKeepr\bin\Debug\netcoreapp2.1\monsterKeepr.pdb
+C:\Users\codyb\source\codeworks\monsterKeepr\obj\Debug\netcoreapp2.1\monsterKeepr.csprojAssemblyReference.cache
+C:\Users\codyb\source\codeworks\monsterKeepr\obj\Debug\netcoreapp2.1\monsterKeepr.csproj.CoreCompileInputs.cache
+C:\Users\codyb\source\codeworks\monsterKeepr\obj\Debug\netcoreapp2.1\monsterKeepr.RazorAssemblyInfo.cache
+C:\Users\codyb\source\codeworks\monsterKeepr\obj\Debug\netcoreapp2.1\monsterKeepr.RazorAssemblyInfo.cs
+C:\Users\codyb\source\codeworks\monsterKeepr\obj\Debug\netcoreapp2.1\monsterKeepr.AssemblyInfoInputs.cache
+C:\Users\codyb\source\codeworks\monsterKeepr\obj\Debug\netcoreapp2.1\monsterKeepr.AssemblyInfo.cs
+C:\Users\codyb\source\codeworks\monsterKeepr\obj\Debug\netcoreapp2.1\monsterKeepr.RazorTargetAssemblyInfo.cache
+C:\Users\codyb\source\codeworks\monsterKeepr\obj\Debug\netcoreapp2.1\monsterKeepr.dll
+C:\Users\codyb\source\codeworks\monsterKeepr\obj\Debug\netcoreapp2.1\monsterKeepr.pdb
