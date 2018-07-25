@@ -6,5 +6,7 @@ namespace monsterKeepr.Controllers
   public class AccountController : Controller
   {
 
+private readonly UserRepository _db;
+
   }
 }
