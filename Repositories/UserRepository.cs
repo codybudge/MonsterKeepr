@@ -40,5 +40,9 @@ public class UserRepository : DbContext
       return null;
     }
   }
+  public UserReturnModel Login(LoginUserModel creds)
+  {
+    
+  }
 }
 }
