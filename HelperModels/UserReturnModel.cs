@@ -13,8 +13,11 @@ namespace monsterKeepr.Models
     {
       var claims = new List<Claim> {
         new Claim(ClaimTypes.Email, Email),
-        new Claim(ClaimTypes.Name, Id.ToString)
+        new Claim(ClaimTypes.Name, Id.ToString())
       };
+      var userIdentity = new ClaimsIdentity(claims, "login");
+      ClaimsPrincipal principle = new ClaimsPrincipal(userIdentity);
+      return principle;
     }
   }
 }

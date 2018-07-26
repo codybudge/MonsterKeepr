@@ -1,5 +1,6 @@
 using System.Data;
 using System;
+using monsterKeepr.Models;
 
 
 namespace monsterKeepr.Repositories
