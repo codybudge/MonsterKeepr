@@ -1,8 +1,8 @@
 namespace monsterKeepr.Models
 {
-  public class LoginUserModels
+  public class LoginUserModel
   {
     public string Email { get; set; }
-    public string Username { get; set; }
+    public string Password { get; set; }
   }
 }
