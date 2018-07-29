@@ -62,9 +62,9 @@ namespace monsterKeepr.Controllers
     [HttpPut]
     public UserReturnModel UpdateAccount([FromBody]UserReturnModel user)
     {
-      var email =HttpContext.User.Claims.Where(c => c.Type == ClaimTypes.Email)
-        .Select(c =>c.Value).SingleOrDefault();
-      var sessionUser= _db.GetByUserEmail(email);
+      var email = HttpContext.User.Claims.Where(c => c.Type == ClaimTypes.Email)
+        .Select(c => c.Value).SingleOrDefault();
+      var sessionUser = _db.GetByUserEmail(email);
 
       if (sessionUser.Id == user.Id)
       {
@@ -72,6 +72,22 @@ namespace monsterKeepr.Controllers
       }
       return null;
     }
-    
+    [Authorize]
+    [HttpPut("change-password")]
+    public string ChangePassword([FromBody]ChangeUserPasswordModel user)
+    {
+      if (ModelState.IsValid)
+      {
+        var email = HttpContext.User.Claims.Where(c => c.Type == ClaimTypes.Email)
+            .Select(c => c.Value).SingleOrDefault();
+        var sessionUser = _db.GetByUserEmail(email);
+
+        if (sessionUser.Id == user.Id)
+        {
+          return _db.ChangeUserPassword(user);
+        }
+      }
+      return "How did you even get here!?!";
+    }
   }
 }
