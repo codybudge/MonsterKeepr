@@ -1,6 +1,6 @@
 namespace monsterKeepr.Models
 {
-  public class Keeps
+  public class Keep
   {
     public string id { get; set; }
     public string Url { get; set; }
