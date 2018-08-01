@@ -9,7 +9,6 @@ namespace monsterKeepr
   public class KeepController : Controller
   {
     private readonly KeepRepository db;
-
     public KeepController(KeepRepository repo)
     {
       db = repo;
@@ -17,6 +16,12 @@ namespace monsterKeepr
 
     //GET api/Keep
     [HttpGet]
+    public IEnumerable<Keep> Get()
+    {
+      return db.GetAll();
+    }
+    
+    [HttpGet("mykeeps")]
     public IEnumerable<Keep> GetUserKeep()
     {
       var userId = HttpContext.User.Identity.Name;
