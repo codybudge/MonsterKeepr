@@ -3,7 +3,7 @@ using API_Users.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace monsterKeepr
+namespace monsterKeepr.Controllers
 {
   [Route("api/[controller")]
 

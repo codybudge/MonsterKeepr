@@ -4,7 +4,7 @@ using System.Linq;
 using Dapper;
 using monsterKeepr.Models;
 
-namespace monsterKeepr
+namespace monsterKeepr.Repositories
 {
   public class KeepRepository
   {

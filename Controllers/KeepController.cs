@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using monsterKeepr.Models;
 
-namespace monsterKeepr
+namespace monsterKeepr.Controllers
 {
   [Route("api/[controller]")]
   public class KeepController : Controller
@@ -20,7 +20,7 @@ namespace monsterKeepr
     {
       return db.GetAll();
     }
-    
+
     [HttpGet("mykeeps")]
     public IEnumerable<Keep> GetUserKeep()
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using API_Users.Models;
 using Dapper;
 
-namespace monsterKeepr
+namespace monsterKeepr.Repositories
 {
   public class VaultRepository
   {
