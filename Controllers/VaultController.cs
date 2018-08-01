@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using API_Users.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using monsterKeepr.Repositories;
 
 namespace monsterKeepr.Controllers
 {

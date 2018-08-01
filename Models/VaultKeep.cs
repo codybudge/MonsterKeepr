@@ -5,6 +5,6 @@ namespace monsterKeepr.Models
     public int Id { get; set; }
     public int VualtId { get; set; }
     public int KeepId { get; set; }
-    public string userId { get; set; }
+    public string UserId { get; set; }
   }
 }
