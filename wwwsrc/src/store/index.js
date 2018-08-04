@@ -26,13 +26,48 @@ export default new vuex.Store({
     keeps: [],
     vaults: [],
     currentKeep: {},
-    vaultKeps: [],
+    activeVault: {},
+    vaultKeeps: [],
     myKeeps: []
   },
   mutations: {
-
+    setUser(state, user) {
+      state.currentUser = user
+    },
+    setKeeps(state, keeps) {
+      state.keeps = keeps
+    },
+    setKeep(state, keep) {
+      state.currentKeep = keep
+    },
+    setMyKeeps(state, keeps) {
+      state.myKeeps = keeps
+    },
+    setVaults(state, vaults)
+    {
+      state.vaults = vaults
+    },
+    setActiveVault(state, vaultId) {
+      state.activeVault = state.vaults.find(v => v.id == vaultId)
+    },
+    setVaultKeeps(state, keeps) {
+      state.vaultKeeps = keeps
+    }
   },
   actions: {
-    
+    addToVault(payload) {
+      var newvk = {}
+      newvk.keepId = payload.keep.id
+      newvk.vaultId = payload.vault.id
+      console.log(newvk)
+      api.post('/vaultkeeps', newvk)
+    },
+    getVaultKeeps({ commit }, payload) {
+      api.get('vaultkeeps/' + payload)
+        .then(res => {
+          commit("setVaultKeeps", res.data)
+        })
+    },
+
   }
 })
