@@ -55,6 +55,7 @@ export default new vuex.Store({
     }
   },
   actions: {
+    //VaultKeeps ---------------------------
     addToVault(payload) {
       var newvk = {}
       newvk.keepId = payload.keep.id
@@ -68,6 +69,15 @@ export default new vuex.Store({
           commit("setVaultKeeps", res.data)
         })
     },
+    //Vaults -----------------------------------
+    getVaults({commit}) {
+      api.get('/vault')
+      .then(res => {
+        commit('setVaults', res.data)
+        console.log(res.data)
+      })
+    },
+
 
   }
 })
