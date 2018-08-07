@@ -3,6 +3,7 @@ import vuex from 'vuex'
 import axios from 'axios'
 import router from "../router"
 import Vue from 'vue';
+import { appendFileSync } from 'fs';
 
 var production = !window.location.host.includes('localhost');
 var baseUrl = production ? '//monster-keepr.herokuapp.com/' : '//localhost:5000/';
@@ -55,7 +56,7 @@ export default new vuex.Store({
     }
   },
   actions: {
-    //VaultKeeps ---------------------------
+    //VaultKeep ---------------------------
     addToVault(payload) {
       var newvk = {}
       newvk.keepId = payload.keep.id
@@ -70,11 +71,43 @@ export default new vuex.Store({
         })
     },
     //Vaults -----------------------------------
+    addnewVault({state}, newVault) {
+      newVault.UserId = state.currentUser.id
+      newVault.Username = state.currentUser.username
+      api.get('/vault', newVault)
+    },
     getVaults({commit}) {
       api.get('/vault')
       .then(res => {
         commit('setVaults', res.data)
         console.log(res.data)
+      })
+    },
+    setActiveVault({commit}, vaultId) {
+      commit('setActiveVault', vaultId)
+    },
+    //Keeps------------------------------------
+    createKeep({dispatch, state}, payload) {
+      payload.userId = state.currentUser.id
+      payload.Username = state.currentUser.username
+      api.post('/keeps', payload)
+      .then(res => {
+        dispatch('getAllKeeps', res.data)
+      })
+    },
+    addNewKeep({state}, payload) {
+      payload.UserId = state.currentUser.id
+      payload.Username = state.currentUser.username
+      api.post('/keeps', payload)
+    },
+    setKeep({commit}, payload) {
+      api.put('/keeps/' + payload.id, payload)
+      commit('setKeep', payload)
+    },
+    getAllKeeps({commit}) {
+      api.get('/keeps')
+      .then(res => {
+        commit('setKeeps', res.data)
       })
     },
 
