@@ -10,44 +10,67 @@
           <button class="btn" type="submit">Submit</button>
         </form>
         <div v-for="keep in keeps">
-            <div class="card" style="width: 18rem;">
-                <h3 class="card-title">{{keep.name}}</h3>
-                <img class="card-img-top" :src="keep.url" alt="Card image">
-                <div class="card-body">
-                  <p class="card-text">{{keep.description}}</p>
-                  <p class="card-text">Views:{{keep.views}}</p>
-                  <p class="card-text">Saves: {{keep.saves}}</p>
-                  <button @click="makePrivate(keep)">
-                    Make Private
-                  </button>
-                  <button @click="makePublic(keep)">
-                    Make Public
-                  </button>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem;">
+            <h3 class="card-title">{{keep.name}}</h3>
+            <img class="card-img-top" :src="keep.url" alt="Card image">
+            <div class="card-body">
+              <p class="card-text">{{keep.description}}</p>
+              <p class="card-text">Views:{{keep.views}}</p>
+              <p class="card-text">Saves: {{keep.saves}}</p>
+              <button @click="makePrivate(keep)">
+                Make Private
+              </button>
+              <button @click="makePublic(keep)">
+                Make Public
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
   </div>
 </template>
 
 <script>
   export default {
-    name: '',
+    name: 'Keeps',
     data() {
       return {
-
+        newKeep: {
+          url: '',
+          name: '',
+          description: ''
+        }
       }
     },
-    computed: {},
-    methods: {}
+    mounted() {
+      this.$store.dispatch('getMyKeeps')
+    },
+    computed: {
+      keeps() {
+        return this.$store.dispatch('getMyKeeps')
+      },
+      currentUser() {
+        return this.$store.state.currentUser
+      }
+    },
+    methods: {
+      createKeep() {
+        return this.$store.dispatch('createKeep', this.newKeep)
+      },
+      makePrivate(keep) {
+        keep.public = false
+        this.$store.dispatch('setKeep', keep)
+      },
+      makePublic(keep) {
+        keep.public = false
+        this.$store.dispatch('setKeep', keep)
+      }
+    }
   }
-
 </script>
 
 <style>
-
-
 </style>
