@@ -6,7 +6,7 @@ using monsterKeepr.Repositories;
 
 namespace monsterKeepr.Controllers
 {
-  [Route("api/[controller")]
+  [Route("api/[controller]")]
 
   public class VualtController : Controller
   {
