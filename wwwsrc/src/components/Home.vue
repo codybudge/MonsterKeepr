@@ -1,7 +1,9 @@
 <template>
   <div class="container-fluid Home">
     <div class="nav justify-content-center">
+    <h1>NavBar Here</h1>
       <Nav></Nav>
+      <h1>Test Script</h1>
       <Keeps></Keeps>
       <Vault></Vault>
     </div>
